@@ -39,6 +39,7 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       { protocol: "https", hostname: "placeholder.pics" },
+      { protocol: "https", hostname: "i.imgur.com" },
     ],
   },
 };

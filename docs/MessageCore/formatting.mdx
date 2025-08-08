@@ -1,0 +1,30 @@
+---
+title: Formatting
+description: MiniMessage, gradients, centering, and variables.
+---
+
+MessageCore supports rich formatting using MiniMessage-like syntax.
+
+## Gradients
+
+```yaml
+prefix: "<b><gradient:#832466:#BF4299:#832466>MessageCore</gradient></b> <dark_gray>»</dark_gray>"
+```
+
+## Centering
+
+Use `<center>` to center multi-line messages:
+
+```yaml
+- '[MESSAGE] <center><red>Welcome!</red><n><gray>Enjoy your stay.</gray></center>'
+```
+
+## Placeholders
+
+Placeholders like `%player_name%` are supported via PlaceholderAPI.
+
+```yaml
+- '[MESSAGE] <green>Hello %player_name%</green>'
+```
+
+

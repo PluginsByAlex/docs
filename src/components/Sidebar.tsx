@@ -37,10 +37,12 @@ export default function Sidebar() {
   const tree = getDocsTree();
   return (
     <div className="h-full overflow-y-auto p-4">
-      <div className="mb-6 flex items-center gap-2 px-2">
-        <BookOpen className="h-5 w-5" />
-        <span className="text-sm font-semibold">Plugin Docs</span>
-      </div>
+      <Link href="/" className="mb-6 flex items-center gap-2 px-2">
+        <div className="flex items-center gap-2">
+          <BookOpen className="h-5 w-5" />
+          <span className="text-sm font-semibold">Plugins by Alex</span>
+        </div>
+      </Link>
       {renderNodes(tree)}
       <div className="h-6" />
     </div>

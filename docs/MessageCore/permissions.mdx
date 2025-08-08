@@ -1,0 +1,39 @@
+---
+title: Permissions
+description: Permission nodes used by MessageCore.
+---
+
+These nodes control access to commands and features.
+
+## Core
+
+- `messagecore.use`: Use the base command `/messagecore` (help output)
+- `messagecore.admin.reload`: `/messagecore reload`
+
+## Announcements
+
+- `messagecore.admin.announce`: `/messagecore announce <preset>`
+- `messagecore.user.announce.toggle`: `/messagecore announce toggle <player?>`
+- `messagecore.admin.announce.pause`: `/messagecore announce pause` and `/messagecore announce resume`
+
+## Messaging
+
+- `messagecore.admin.broadcast`: `/messagecore broadcast <message>`
+- `messagecore.admin.firework`: `/messagecore firework <preset>`
+
+## Rank-based welcome overrides
+
+Permissions listed in `welcomeMessages/ranks.yml` (for example `joinrank.owner`) disable the default welcome message and use the configured rank-specific messages instead.
+
+```yaml
+ranks:
+  'Owner':
+    permission: joinrank.owner
+    joinMessage:
+      actions:
+        - '[MESSAGE] <n><green>%player_name%</green> <gray>has joined the server</gray><n>'
+        - '[SOUND] BLOCK_ANVIL_BREAK'
+        - '[FIREWORK] classic_burst'
+```
+
+

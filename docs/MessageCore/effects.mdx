@@ -1,0 +1,70 @@
+---
+title: Effects
+description: Fireworks, particles, sounds, lightning, and more.
+---
+
+MessageCore supports multiple visual and audio effects that can be triggered from actions.
+
+## Fireworks
+
+Firework presets live in `effects/fireworks.yml`:
+
+```yaml
+fireworks:
+  'classic_burst':
+    type: sphere
+    particles: 50
+    colors: ['#FF0000', '#00FF00', '#0000FF']
+    size: 1.0
+    spread: 360
+    lifetime: 2.0
+
+  'golden_willow':
+    type: cascade
+    particles: 75
+    colors: ['#FFD700', '#FFA500']
+    size: 0.8
+    spread: 180
+    lifetime: 3.0
+    trail_effect: sparkle
+
+  'rainbow_crown':
+    type: crown
+    particles: 100
+    colors: ['#FF0000','#FF7F00','#FFFF00','#00FF00','#0000FF','#4B0082','#9400D3']
+    size: 1.2
+    spread: 270
+    lifetime: 2.5
+```
+
+Trigger a firework preset from any actions list:
+
+```yaml
+- '[FIREWORK] classic_burst'
+```
+
+## Particles
+
+You can add Minecraft particle keys directly:
+
+```yaml
+- '[PARTICLE] ASH'
+```
+
+## Sounds
+
+Play any valid sound key:
+
+```yaml
+- '[SOUND] BLOCK_ANVIL_BREAK'
+```
+
+## Lightning
+
+Visual-only lightning at the player’s location:
+
+```yaml
+- '[LIGHTNING]'
+```
+
+

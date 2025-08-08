@@ -10,28 +10,28 @@ A GitBook-style documentation site for my Minecraft plugins using:
 
 ## 🧭 Core Layout
 
-- [ ] Create responsive layout
-  - [ ] Sidebar on the left (acts like a card)
-    - [ ] Logo
-    - [ ] Plugin name
-    - [ ] Nav links
-  - [ ] Main content area on the right
-- [ ] Optional top nav with:
-  - [ ] Theme switcher
-  - [ ] Search input
-  - [ ] GitHub repo link
+- [x] Create responsive layout
+  - [x] Sidebar on the left (acts like a card)
+    - [x] Logo
+    - [x] Plugin name
+    - [x] Nav links
+  - [x] Main content area on the right
+- [x] Optional top nav with:
+  - [x] Theme switcher
+  - [x] Search input
+  - [x] GitHub repo link
 
 ---
 
 ## 📄 Pages & Routing
 
-- [ ] Use Next.js App Router
-- [ ] Set up dynamic routing for docs  
+- [x] Use Next.js App Router
+- [x] Set up dynamic routing for docs  
   `app/docs/[...slug]/page.tsx`
-- [ ] Add MDX support with:
-  - `@next/mdx` or
+- [x] Add MDX support with:
+  - `@next/mdx` and
   - `next-mdx-remote`
-- [ ] Create directory structure:
+- [x] Create directory structure:
   ```
   /docs
     ├── getting-started.mdx
@@ -39,31 +39,31 @@ A GitBook-style documentation site for my Minecraft plugins using:
     ├── commands.mdx
     └── permissions.mdx
   ```
-- [ ] Add fallback 404 page
+- [x] Add fallback 404 page
 
 ---
 
 ## ✨ Features
 
-- [ ] Syntax highlighting for code blocks
-- [ ] Table of contents (auto-generated from headings)
-- [ ] Breadcrumb navigation
-- [ ] Sticky sidebar with scrollspy
+- [x] Syntax highlighting for code blocks
+- [x] Table of contents (auto-generated from headings)
+- [x] Breadcrumb navigation
+- [x] Sticky sidebar with scrollspy
 
 ---
 
 ## 🎨 Styling
 
-- [ ] Use Tailwind CSS for layout and spacing
-- [ ] Apply Shadcn `typography` styles to MDX content
-- [ ] Use `lucide-react` icons in sidebar and nav
-- [ ] Ensure mobile responsiveness:
-  - [ ] Collapsible sidebar
-  - [ ] Mobile-friendly typography
+- [x] Use Tailwind CSS for layout and spacing
+- [x] Apply Shadcn `typography` styles to MDX content
+- [x] Use `lucide-react` icons in sidebar and nav
+- [x] Ensure mobile responsiveness:
+  - [x] Collapsible sidebar
+  - [x] Mobile-friendly typography
 
 ---
 
 ## 🔍 Extras
 
-- [ ] Search (Algolia DocSearch or Fuse.js)
-- [ ] Plugin switcher (multi-plugin documentation support)
+- [x] Search (Algolia DocSearch or Fuse.js)
+- [x] Plugin switcher (multi-plugin documentation support)

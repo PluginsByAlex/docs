@@ -12,13 +12,14 @@ export async function generateStaticParams() {
   return entries.map((e) => ({ slug: e.slug }));
 }
 
-export default function DocsPage({ params }: { params: { slug: string[] } }) {
-  const data = getDocBySlug(params.slug);
+export default async function DocsPage({ params }: { params: Promise<{ slug: string[] }> }) {
+  const { slug } = await params;
+  const data = getDocBySlug(slug);
   if (!data) return notFound();
 
   return (
     <div>
-      <Breadcrumbs slug={params.slug} />
+      <Breadcrumbs slug={slug} />
       <h1 className="mb-4 text-3xl font-bold">{data.meta.title}</h1>
       <MDXRemote
         source={data.content}

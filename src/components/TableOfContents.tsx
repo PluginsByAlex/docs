@@ -1,23 +1,27 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
 type Heading = { id: string; text: string; level: number };
 
 export default function TableOfContents() {
   const [activeId, setActiveId] = useState<string | null>(null);
+  const [headings, setHeadings] = useState<Heading[]>([]);
+  const [mounted, setMounted] = useState(false);
 
-  const headings: Heading[] = useMemo(() => {
-    if (typeof document === "undefined") return [];
+  useEffect(() => {
+    setMounted(true);
     const nodes = Array.from(
       document.querySelectorAll("main h1, main h2, main h3, main h4")
     ) as HTMLHeadingElement[];
-    return nodes.map((el) => ({
-      id: el.id,
-      text: el.textContent || "",
-      level: Number(el.tagName.slice(1)),
-    }));
+    setHeadings(
+      nodes.map((el) => ({
+        id: el.id,
+        text: el.textContent || "",
+        level: Number(el.tagName.slice(1)),
+      }))
+    );
   }, []);
 
   useEffect(() => {
@@ -40,11 +44,10 @@ export default function TableOfContents() {
     return () => observer.disconnect();
   }, [headings]);
 
-  if (headings.length === 0) return null;
+  if (!mounted || headings.length === 0) return null;
 
   return (
     <div className="text-sm">
-      <div className="mb-2 font-semibold">On this page</div>
       <ul className="space-y-1">
         {headings.map((h) => (
           <li key={h.id} className="truncate">

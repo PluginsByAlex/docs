@@ -14,8 +14,42 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Minecraft Plugin Docs",
-  description: "Documentation for Minecraft plugins",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),
+  title: {
+    default: "Plugins by Alex",
+    template: "%s • Plugins by Alex",
+  },
+  description: "Documentation for Alex’s Minecraft plugins",
+  applicationName: "Plugins by Alex",
+  authors: [{ name: "Alex" }],
+  keywords: [
+    "Minecraft",
+    "plugins",
+    "docs",
+    "MessageCore",
+    "GlobalQuests",
+    "shadcn",
+    "Tailwind"
+  ],
+  openGraph: {
+    type: "website",
+    siteName: "Plugins by Alex",
+    title: "Plugins by Alex",
+    description: "Documentation for Alex’s Minecraft plugins",
+    url: "/",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Plugins by Alex",
+    description: "Documentation for Alex’s Minecraft plugins",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: "/",
+  },
 };
 
 export default function RootLayout({
@@ -26,7 +60,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-background text-foreground`}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <ThemeProvider>
           {children}
         </ThemeProvider>
       </body>

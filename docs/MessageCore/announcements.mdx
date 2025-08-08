@@ -1,0 +1,51 @@
+---
+title: Announcements
+description: Server-wide announcements with presets and effects.
+---
+
+MessageCore can run automated announcements using presets defined in `config.yml`.
+
+## Scheduling
+
+```yaml
+announcements:
+  enabled: true
+  duration: 300    # seconds between announcements
+  randomOrder: true
+```
+
+## Presets
+
+```yaml
+announcementsPresets:
+  'preset1':
+    enabled: true
+    actions:
+      - '[TITLE] <b><gradient:#832466:#832466>Title</gradient></b><n><green>Subtitle</green>'
+      - '[ACTIONBAR] <green>Also show actionbar messages</green>'
+      - '[BOSSBAR;PINK] <red>Also show bossbar messages</red>'
+      - '[MESSAGE] <center><red>Also show messages</red><n><dark_red>Very cool!</dark_red></center>'
+
+  'preset2':
+    enabled: true
+    avatar: true
+    actions:
+      - '[MESSAGE] <red>This is the first line next to the avatar<n>This is the second line next to the avatar</red>'
+      - '[SOUND] BLOCK_ANVIL_BREAK'
+      - '[FIREWORK] fireworkPreset1'
+      - '[PARTICLE] ASH'
+      - '[TOAST] <red>This is a toast message</red>'
+```
+
+Each `actions` entry can be one of:
+
+- `[MESSAGE] <miniMessage>`
+- `[TITLE] <title><n><subtitle>`
+- `[ACTIONBAR] <miniMessage>`
+- `[BOSSBAR;COLOR] <miniMessage>`
+- `[TOAST] <miniMessage>`
+- `[SOUND] SOUND_KEY`
+- `[FIREWORK] presetName`
+- `[PARTICLE] PARTICLE_KEY`
+
+

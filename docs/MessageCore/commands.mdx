@@ -1,0 +1,43 @@
+---
+title: Commands
+description: All MessageCore commands with examples.
+---
+
+| Command | Permission | Description |
+|---------|------------|-------------|
+| `/messagecore` | `messagecore.use` | Base command (help output) |
+| `/messagecore reload` | `messagecore.admin.reload` | Reload all configuration files |
+| `/messagecore announce <preset>` | `messagecore.admin.announce` | Trigger a specific announcement preset |
+| `/messagecore announce toggle <player>` | `messagecore.user.announce.toggle` | Toggle announcements on/off (for yourself or for the optional player) |
+| `/messagecore announce pause` | `messagecore.admin.announce.pause` | Pause all announcements server‑wide |
+| `/messagecore announce resume` | `messagecore.admin.announce.pause` | Resume announcements server‑wide |
+| `/messagecore broadcast <message>` | `messagecore.admin.broadcast` | Send a formatted broadcast message |
+| `/messagecore firework <preset>` | `messagecore.admin.firework` | Launch a predefined firework preset |
+
+## Examples
+
+Broadcast a message to everyone:
+
+```bash
+/messagecore broadcast "Server will restart in 5 minutes!"
+```
+
+Send a private message:
+
+```bash
+/messagecore send Alex "Check your inbox."
+```
+
+Trigger an announcement preset:
+
+```bash
+/messagecore announce preset1
+```
+
+Launch a firework preset at your location:
+
+```bash
+/messagecore firework classic_burst
+```
+
+

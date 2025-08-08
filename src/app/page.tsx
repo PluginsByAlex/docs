@@ -1,103 +1,94 @@
 import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+
+const plugins = [
+  {
+    name: "MessageCore",
+    description: "Custom messages, anywhere",
+    image: "https://i.imgur.com/DVB2XaA.png",
+    href: "/docs/MessageCore",
+  },
+  {
+    name: "GlobalQuests",
+    description: "Quests to be completed by everyone.",
+    image: "https://i.imgur.com/zar2ez4.png",
+    href: "/docs/GlobalQuests",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="relative">
+      {/* Ambient background */}
+      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+        <div className="absolute left-1/2 top-[-10%] h-[40rem] w-[40rem] -translate-x-1/2 rounded-full bg-[radial-gradient(closest-side,rgba(59,130,246,0.15),transparent)] blur-2xl" />
+        <div className="absolute right-[-10%] bottom-[-10%] h-[32rem] w-[32rem] rounded-full bg-[radial-gradient(closest-side,rgba(16,185,129,0.12),transparent)] blur-2xl" />
+      </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* Hero */}
+      <section className="mx-auto max-w-5xl px-6 pt-20 pb-10 text-center">
+
+        <h1 className="mt-6 text-5xl font-bold tracking-tight md:text-6xl">
+          <span className="bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">Plugins by Alex</span>
+        </h1>
+        <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
+          Documentation for Alex’s Minecraft plugins. Clean, fast, and modern.
+        </p>
+        {/* CTA buttons removed per request */}
+      </section>
+
+      {/* Plugins showcase */}
+      <section className="mx-auto max-w-6xl px-6 pb-24">
+        <div className="mb-6 flex items-center justify-between">
+          <h2 className="text-xl font-semibold text-muted-foreground">Plugins</h2>
+          <Link href="/docs" className="text-sm text-muted-foreground underline-offset-4 hover:underline">
+            View all docs
+          </Link>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+          {plugins.map((p) => (
+            <article
+              key={p.name}
+              className="group relative overflow-hidden rounded-2xl border border-border bg-card"
+            >
+              {/* Glow / border accent */}
+              <div aria-hidden className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-white/5" />
+              <div aria-hidden className="pointer-events-none absolute -inset-px rounded-2xl opacity-0 [background:radial-gradient(40rem_40rem_at_100%_100%,rgba(59,130,246,0.15),transparent)] transition-opacity duration-700 group-hover:opacity-100" />
+
+              {/* Image */}
+              <div className="relative h-56 w-full overflow-hidden">
+                <Image
+                  src={p.image}
+                  alt={p.name}
+                  fill
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                  priority
+                />
+                <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+              </div>
+
+              {/* Content */}
+              <div className="relative z-10 -mt-10 px-5 pb-5">
+                <div className="rounded-xl border border-white/5 bg-black/20 p-4 backdrop-blur">
+                  <div className="flex items-start justify-between gap-3">
+                    <div>
+                      <h3 className="text-lg font-semibold">{p.name}</h3>
+                      <p className="mt-1 text-sm text-muted-foreground">{p.description}</p>
+                    </div>
+                    <Link href={p.href} className="shrink-0">
+                      <Button size="sm" variant="secondary">
+                        View docs
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }
