@@ -15,6 +15,12 @@ const plugins = [
     image: "https://i.imgur.com/zar2ez4.png",
     href: "/docs/GlobalQuests",
   },
+  {
+    name: "PotionPal",
+    description: "Hold an item in your offhand to gain potion effects.",
+    image: "https://i.imgur.com/fLK1uzf.png",
+    href: "/docs/PotionPal",
+  },
 ];
 
 export default function Home() {

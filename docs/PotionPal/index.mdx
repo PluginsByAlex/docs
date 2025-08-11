@@ -1,0 +1,58 @@
+---
+title: PotionPal
+description: PotionPal allows players to hold an item in their offhand and gain potion effects.
+---
+
+**PotionPal allows players to hold an item in their offhand and gain potion effects.**
+
+## What it does
+- **Passive effects from items**: Hold a configured item in your main hand or offhand to gain its effect (e.g., Health Boost, Slow Falling, Fire Resistance, Levitation).
+- **Clear in‑game feedback**: Optional action bar messages and subtle particles show when an effect is active.
+- **Accident-proof**: These special items can’t be placed as blocks by mistake.
+
+## Compatibility
+- **Server**: Spigot/Paper 1.20+
+- **Command alias**: `potionpal` is also available as `pp`.
+
+## Install
+1. Drop the plugin jar into your server’s `plugins` folder.
+2. Restart your server.
+3. A default `config.yml` is generated with example items ready to use.
+
+## Quick start for admins
+- **See available item keys**: `/potionpal list`
+- **Give a player an item**: `/potionpal give <player> <itemKey>` (example: `/pp give Alex item1`)
+- **Reload settings**: `/potionpal reload`
+
+## Player usage
+- **Hold the item**: Put it in the hand the item was made for (most examples use the offhand). The effect is active while you hold it.
+- **Feedback**: You may see an action bar note like “Enabled” and small particles when it’s active.
+- **Stop holding = effect fades**: Once you stop holding it, the effect ends shortly after.
+- **No accidental placement**: You can’t place these special items as blocks.
+
+## Commands
+- `/<potionpal|pp> list` — Shows the available item keys.
+- `/<potionpal|pp> give <player> <itemKey>` — Gives the selected item to a player.
+- `/<potionpal|pp> reload` — Reloads the plugin settings.
+
+## Permissions
+- `potionpal.list` — Use `/potionpal list`
+- `potionpal.give` — Use `/potionpal give`
+- `potionpal.reload` — Use `/potionpal reload`
+
+Grant these to your staff as needed.
+
+## Included examples (out of the box)
+- **Health Boost** (offhand): Increases max health.
+- **Slow Falling** (offhand): Reduces fall speed.
+- **Fire Resistance** (offhand): Protects from fire and lava.
+- **Levitation** (offhand): Gently lifts the player.
+
+You can rename items, switch which hand they use, and customize messages/particles through the config.
+
+## Tips
+- Want these items sold in a shop or earned as rewards? Use the item keys with your shop/quest plugin to give them to players.
+- If an effect isn’t showing, make sure the player is holding the right item in the intended hand and the name matches the special item given by staff.
+
+
+

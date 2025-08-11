@@ -17,10 +17,21 @@ export default async function DocsPage({ params }: { params: Promise<{ slug: str
   const data = getDocBySlug(slug);
   if (!data) return notFound();
 
+  const pluginLabel = slug && slug.length > 0 ? slug[0] : "General";
+
   return (
     <div>
       <Breadcrumbs slug={slug} />
-      <h1 className="mb-4 text-3xl font-bold">{data.meta.title}</h1>
+      {/* Page header (not affected by prose) */}
+      <div className="not-prose mb-6 border-b border-border pb-4">
+        <div className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">{pluginLabel}</div>
+        <h1 className="mt-2 text-3xl font-bold tracking-tight">{data.meta.title}</h1>
+        {data.meta.description && (
+          <p className="mt-2 max-w-3xl text-sm text-muted-foreground">{data.meta.description}</p>
+        )}
+      </div>
+
+      {/* MDX content */}
       <MDXRemote
         source={data.content}
         options={{
